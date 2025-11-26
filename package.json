@@ -1,0 +1,45 @@
+{
+  "name": "escrow.privatecharterx",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "compile": "hardhat compile",
+    "deploy": "node scripts/deploy.cjs",
+    "deploy:base": "node scripts/deploy-base.cjs"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.6.0",
+    "@reown/appkit-adapter-wagmi": "^1.6.0",
+    "@supabase/supabase-js": "^2.84.0",
+    "@tanstack/react-query": "^5.17.19",
+    "crypto-js": "^4.2.0",
+    "ethers": "^6.13.4",
+    "framer-motion": "^11.0.3",
+    "lucide-react": "^0.321.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^6.21.3",
+    "resend": "^6.5.2",
+    "viem": "^2.21.46",
+    "wagmi": "^2.12.17"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "dotenv": "^16.4.1",
+    "hardhat": "^2.19.5",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
+  }
+}
