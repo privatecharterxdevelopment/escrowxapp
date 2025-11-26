@@ -83,12 +83,9 @@ export default function SplitAuthModal({ isOpen, onClose, defaultMode = 'login' 
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
           data: {
             username: username.trim(),
           },
-          // Disable email confirmation - users can login immediately
-          emailRedirectTo: undefined,
         },
       });
 
