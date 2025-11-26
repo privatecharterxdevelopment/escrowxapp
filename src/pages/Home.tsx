@@ -290,16 +290,16 @@ export default function Home() {
           </div>
 
           {/* Main Title with Animation */}
-          <div className="mb-6 text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight tracking-tight mb-4">
+          <div className="mb-6 flex items-center justify-center gap-3">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight tracking-tight">
               Decentralized
             </h1>
-            <div className="flex items-center justify-center">
-              <span className="inline-block relative overflow-hidden" style={{ width: '100%', height: '50px' }}>
+            <div className="inline-flex items-center">
+              <span className="inline-block relative overflow-hidden" style={{ width: '260px', height: '40px' }}>
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 right-0 text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
+                    className={`absolute left-0 right-0 text-3xl sm:text-4xl font-semibold text-gray-600 leading-tight transition-all duration-500 ${
                       index === currentWord
                         ? 'translate-y-0 opacity-100'
                         : index < currentWord
