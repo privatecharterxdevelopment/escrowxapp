@@ -291,15 +291,15 @@ export default function Home() {
 
           {/* Main Title with Animation */}
           <div className="mb-6 text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight tracking-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight tracking-tight mb-4">
               Decentralized
             </h1>
             <div className="flex items-center justify-center">
-              <span className="inline-block relative overflow-hidden" style={{ width: '100%', height: '60px' }}>
+              <span className="inline-block relative overflow-hidden" style={{ width: '100%', height: '50px' }}>
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 right-0 text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
+                    className={`absolute left-0 right-0 text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
                       index === currentWord
                         ? 'translate-y-0 opacity-100'
                         : index < currentWord
