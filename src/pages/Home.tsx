@@ -265,7 +265,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-visible pb-0">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video
@@ -279,123 +279,116 @@ export default function Home() {
           </video>
         </div>
 
-        {/* Content - Two Column Layout */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-32 sm:py-40">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Main Content */}
-            <div className="text-left">
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 rounded-full text-xs font-medium mb-6">
-                  <Shield className="w-3.5 h-3.5 text-gray-600" />
-                  <span className="text-gray-600">Secured by Smart Contracts on Base</span>
-                </div>
-              </div>
-
-              <div className="mb-6 flex items-center gap-3">
-                <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight tracking-tight">
-                  Decentralized
-                </h1>
-                <div className="inline-flex items-center">
-                  <span className="inline-block relative overflow-hidden" style={{ width: '260px', height: '40px' }}>
-                    {words.map((word, index) => (
-                      <span
-                        key={word}
-                        className={`absolute left-0 right-0 text-3xl sm:text-4xl font-semibold text-gray-600 leading-tight transition-all duration-500 ${
-                          index === currentWord
-                            ? 'translate-y-0 opacity-100'
-                            : index < currentWord
-                            ? '-translate-y-full opacity-0'
-                            : 'translate-y-full opacity-0'
-                        }`}
-                      >
-                        {word}
-                      </span>
-                    ))}
-                  </span>
-                </div>
-              </div>
-
-              <p className="text-sm sm:text-base text-gray-600 mb-8 leading-relaxed">
-                Institutional-grade escrow services for discerning clients. Smart contract technology meets
-                traditional banking sophistication to secure your most valuable transactions with absolute
-                transparency and unwavering reliability.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-3">
-                <button
-                  onClick={handleGetStarted}
-                  className="bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 group"
-                >
-                  Get Started
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </button>
-                <Link
-                  to="/how-it-works"
-                  className="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-white/80 hover:border-gray-400 transition-colors"
-                >
-                  Learn More
-                </Link>
-              </div>
+        {/* Content - Centered Layout */}
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-32 pb-24 flex-1 flex flex-col items-center justify-center">
+          {/* Badge */}
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-2 rounded-full text-sm font-medium">
+              <Shield className="w-4 h-4 text-gray-600" />
+              <span className="text-gray-600">Secured by Smart Contracts on Base</span>
             </div>
+          </div>
 
-            {/* Right Column - Mini Transaction Board */}
-            <div className="hidden lg:block">
-              <div className="bg-white/90 backdrop-blur-xl rounded-xl border border-gray-200 overflow-hidden shadow-lg">
-                <div className="px-4 py-3 bg-gray-50 border-b border-gray-200">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-xs font-medium text-gray-700">Live Transactions</span>
-                  </div>
+          {/* Main Title with Animation */}
+          <div className="mb-6 text-center">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-900 leading-tight tracking-tight mb-4">
+              Decentralized
+            </h1>
+            <div className="flex items-center justify-center">
+              <span className="inline-block relative overflow-hidden" style={{ width: '100%', height: '70px' }}>
+                {words.map((word, index) => (
+                  <span
+                    key={word}
+                    className={`absolute left-0 right-0 text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
+                      index === currentWord
+                        ? 'translate-y-0 opacity-100'
+                        : index < currentWord
+                        ? '-translate-y-full opacity-0'
+                        : 'translate-y-full opacity-0'
+                    }`}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </span>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
+            <button
+              onClick={handleGetStarted}
+              className="bg-gray-900 text-white px-8 py-3 rounded-lg text-base font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 group"
+            >
+              Get Started
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+            <Link
+              to="/how-it-works"
+              className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg text-base font-medium hover:bg-white/80 hover:border-gray-400 transition-colors"
+            >
+              Learn More
+            </Link>
+          </div>
+
+          {/* Description */}
+          <p className="text-base sm:text-lg text-gray-600 text-center max-w-3xl leading-relaxed">
+            Institutional-grade escrow services for discerning clients. Smart contract technology meets
+            traditional banking sophistication to secure your most valuable transactions with absolute
+            transparency and unwavering reliability.
+          </p>
+        </div>
+
+        {/* Transaction Board - Half Cut at Bottom */}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 pb-0">
+          <div className="relative" style={{ height: '250px', overflow: 'hidden' }}>
+            <div className="bg-white/90 backdrop-blur-xl rounded-t-2xl border border-gray-200 border-b-0 overflow-hidden shadow-2xl">
+              <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-sm font-medium text-gray-700">Live Transactions</span>
                 </div>
-                <div className="divide-y divide-gray-100">
-                  {transactions.slice(0, 5).map((tx, index) => (
-                    <div
-                      key={tx.id}
-                      className="px-4 py-3 hover:bg-gray-50/50 transition-colors"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5 min-w-0 flex-1">
-                          <span className="text-lg flex-shrink-0">{tx.flag}</span>
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2 mb-0.5">
-                              <div className="text-xs font-medium text-gray-900 truncate">
-                                {tx.info}
-                              </div>
-                              <span className="px-1.5 py-0.5 text-[10px] font-medium bg-gray-100 text-gray-600 rounded-full whitespace-nowrap">
-                                {tx.category}
-                              </span>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {transactions.slice(0, 8).map((tx) => (
+                  <div
+                    key={tx.id}
+                    className="px-6 py-4 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3 min-w-0 flex-1">
+                        <span className="text-xl flex-shrink-0">{tx.flag}</span>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="text-sm font-medium text-gray-900 truncate">
+                              {tx.info}
                             </div>
-                            <div className="text-xs text-gray-500 truncate">
-                              {tx.wallet}...
-                            </div>
+                            <span className="px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-600 rounded-full whitespace-nowrap">
+                              {tx.category}
+                            </span>
                           </div>
-                        </div>
-                        <div className="text-right flex-shrink-0">
-                          <div className="text-xs font-semibold text-gray-900">
-                            {new Intl.NumberFormat('en-US', {
-                              style: 'currency',
-                              currency: 'USD',
-                              minimumFractionDigits: 0,
-                              maximumFractionDigits: 0,
-                            }).format(tx.amount)}
+                          <div className="text-xs text-gray-500 truncate">
+                            {tx.wallet}...
                           </div>
                         </div>
                       </div>
+                      <div className="text-right flex-shrink-0">
+                        <div className="text-sm font-semibold text-gray-900">
+                          {new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          }).format(tx.amount)}
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-                <div className="px-4 py-2.5 bg-gray-50 border-t border-gray-100 text-center">
-                  <span className="text-xs text-gray-600">Updates every 15 minutes</span>
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 border border-gray-300 rounded-full flex items-start justify-center p-1">
-            <div className="w-1 h-2 bg-gray-400 rounded-full" />
+            {/* Gradient fade at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
           </div>
         </div>
       </section>
