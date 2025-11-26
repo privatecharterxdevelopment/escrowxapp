@@ -280,26 +280,26 @@ export default function Home() {
         </div>
 
         {/* Content - Centered Layout */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-32 pb-16 flex-1 flex flex-col items-center justify-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-24 sm:pt-32 pb-12 sm:pb-16 flex-1 flex flex-col items-center justify-center">
           {/* Badge */}
-          <div className="mb-8">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-2 rounded-full text-sm font-medium">
-              <Shield className="w-4 h-4 text-gray-600" />
+          <div className="mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
+              <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600" />
               <span className="text-gray-600">Secured by Smart Contracts on Base</span>
             </div>
           </div>
 
           {/* Main Title with Animation */}
-          <div className="mb-6 flex items-center justify-center gap-3">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight tracking-tight">
+          <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight tracking-tight text-center">
               Decentralized
             </h1>
             <div className="inline-flex items-center">
-              <span className="inline-block relative overflow-hidden" style={{ width: '260px', height: '40px' }}>
+              <span className="inline-block relative overflow-hidden" style={{ width: '200px', height: '32px' }}>
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 right-0 text-3xl sm:text-4xl font-semibold text-gray-600 leading-tight transition-all duration-500 ${
+                    className={`absolute left-0 right-0 text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
                       index === currentWord
                         ? 'translate-y-0 opacity-100'
                         : index < currentWord
@@ -314,66 +314,66 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
-            <button
-              onClick={handleGetStarted}
-              className="bg-gray-900 text-white px-8 py-3 rounded-lg text-base font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 group"
-            >
-              Get Started
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-            <Link
-              to="/how-it-works"
-              className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg text-base font-medium hover:bg-white/80 hover:border-gray-400 transition-colors"
-            >
-              Learn More
-            </Link>
-          </div>
-
           {/* Description */}
-          <p className="text-base sm:text-lg text-gray-600 text-center max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center max-w-3xl leading-relaxed mb-6 sm:mb-8 px-2">
             Institutional-grade escrow services for discerning clients. Smart contract technology meets
             traditional banking sophistication to secure your most valuable transactions with absolute
             transparency and unwavering reliability.
           </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full sm:w-auto px-4 sm:px-0">
+            <button
+              onClick={handleGetStarted}
+              className="w-full sm:w-auto bg-gray-900 text-white px-5 sm:px-6 py-2.5 sm:py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+            <Link
+              to="/how-it-works"
+              className="w-full sm:w-auto border border-gray-300 bg-white text-gray-700 px-5 sm:px-6 py-2.5 sm:py-2 rounded-lg text-sm font-medium hover:bg-white/80 hover:border-gray-400 transition-colors text-center"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
 
         {/* Transaction Board - Half Cut at Bottom */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 pb-0">
-          <div className="relative" style={{ height: '250px', overflow: 'hidden' }}>
-            <div className="bg-white/90 backdrop-blur-xl rounded-t-2xl border border-gray-200 border-b-0 overflow-hidden shadow-2xl">
-              <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-8 pb-0">
+          <div className="relative" style={{ height: '200px', overflow: 'hidden' }}>
+            <div className="bg-white/90 backdrop-blur-xl rounded-t-xl sm:rounded-t-2xl border border-gray-200 border-b-0 overflow-hidden shadow-2xl">
+              <div className="px-3 py-2.5 sm:px-6 sm:py-4 bg-gray-50 border-b border-gray-200">
                 <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium text-gray-700">Live Transactions</span>
+                  <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-xs sm:text-sm font-medium text-gray-700">Live Transactions</span>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
                 {transactions.slice(0, 8).map((tx) => (
                   <div
                     key={tx.id}
-                    className="px-6 py-4 hover:bg-gray-50/50 transition-colors"
+                    className="px-3 py-2.5 sm:px-6 sm:py-4 hover:bg-gray-50/50 transition-colors"
                   >
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3 min-w-0 flex-1">
-                        <span className="text-xl flex-shrink-0">{tx.flag}</span>
+                    <div className="flex items-center justify-between gap-2 sm:gap-4">
+                      <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                        <span className="text-base sm:text-xl flex-shrink-0">{tx.flag}</span>
                         <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <div className="text-sm font-medium text-gray-900 truncate">
+                          <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5 sm:mb-1">
+                            <div className="text-xs sm:text-sm font-medium text-gray-900 truncate">
                               {tx.info}
                             </div>
-                            <span className="px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-600 rounded-full whitespace-nowrap">
+                            <span className="hidden sm:inline-block px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-600 rounded-full whitespace-nowrap">
                               {tx.category}
                             </span>
                           </div>
-                          <div className="text-xs text-gray-500 truncate">
+                          <div className="text-[10px] sm:text-xs text-gray-500 truncate">
                             {tx.wallet}...
                           </div>
                         </div>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <div className="text-sm font-semibold text-gray-900">
+                        <div className="text-xs sm:text-sm font-semibold text-gray-900">
                           {new Intl.NumberFormat('en-US', {
                             style: 'currency',
                             currency: 'USD',
@@ -388,7 +388,7 @@ export default function Home() {
               </div>
             </div>
             {/* Gradient fade at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
           </div>
         </div>
       </section>
