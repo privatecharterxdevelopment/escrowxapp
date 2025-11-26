@@ -18,6 +18,7 @@ import Dashboard from './pages/Dashboard';
 import CreateEscrow from './pages/CreateEscrow';
 import EscrowDetail from './pages/EscrowDetail';
 import AuthCallback from './pages/AuthCallback';
+import FAQs from './pages/FAQs';
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ function App() {
               <Route path="/art" element={<Art />} />
               <Route path="/services" element={<Services />} />
               <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/faqs" element={<FAQs />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/create-escrow" element={<CreateEscrow />} />
               <Route path="/escrow/:id" element={<EscrowDetail />} />

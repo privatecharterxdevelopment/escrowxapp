@@ -280,7 +280,7 @@ export default function Home() {
         </div>
 
         {/* Content - Centered Layout */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-32 pb-24 flex-1 flex flex-col items-center justify-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-32 pb-16 flex-1 flex flex-col items-center justify-center">
           {/* Badge */}
           <div className="mb-8">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-2 rounded-full text-sm font-medium">
@@ -291,15 +291,15 @@ export default function Home() {
 
           {/* Main Title with Animation */}
           <div className="mb-6 text-center">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-900 leading-tight tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight tracking-tight mb-4">
               Decentralized
             </h1>
             <div className="flex items-center justify-center">
-              <span className="inline-block relative overflow-hidden" style={{ width: '100%', height: '70px' }}>
+              <span className="inline-block relative overflow-hidden" style={{ width: '100%', height: '60px' }}>
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 right-0 text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
+                    className={`absolute left-0 right-0 text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-600 leading-tight transition-all duration-500 text-center ${
                       index === currentWord
                         ? 'translate-y-0 opacity-100'
                         : index < currentWord
@@ -389,52 +389,6 @@ export default function Home() {
             </div>
             {/* Gradient fade at bottom */}
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-3">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-sm text-gray-600 max-w-2xl mx-auto">
-              Everything you need to know about using PrivateCharterX Escrow
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white/60 backdrop-blur-sm border border-gray-200 rounded-xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/80 transition-colors"
-                >
-                  <span className="text-sm font-medium text-gray-900 pr-4">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-gray-600 flex-shrink-0 transition-transform duration-200 ${
-                      openFAQ === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-200 ${
-                    openFAQ === index ? 'max-h-96' : 'max-h-0'
-                  }`}
-                >
-                  <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

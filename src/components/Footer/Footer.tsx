@@ -59,6 +59,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  to="/faqs"
+                  className="text-gray-300 hover:text-white transition-colors font-medium text-sm sm:text-base"
+                >
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/dashboard"
                   className="text-gray-300 hover:text-white transition-colors font-medium text-sm sm:text-base"
                 >
